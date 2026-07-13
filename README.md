@@ -10,6 +10,10 @@ Production static website for Gutterworx, serving West Yorkshire and surrounding
 - Netlify Forms for quote enquiries
 - No package manager, dependencies, build command or generated runtime
 
+## Approved design source
+
+The saved homepage preview at `https://madereal-websites-admin.netlify.app/preview.html?id=gutterworx` is the visual source of truth. Production pages must retain its centred cinematic hero, Oswald typography, glass navigation, black/red palette, service-card treatment, gallery structure and contact styling.
+
 ## Pages
 
 - Standard: Home, About, Services, Gallery, Areas, Contact, Privacy

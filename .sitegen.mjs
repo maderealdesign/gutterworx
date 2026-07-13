@@ -86,7 +86,7 @@ function head({ route, title, description, type = "website", schema, noindex = f
   <meta property="og:image" content="${baseUrl}/assets/images/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="${prefix}assets/images/logo.webp" type="image/webp">
-  <link rel="stylesheet" href="${prefix}assets/css/site.css?v=2">
+  <link rel="stylesheet" href="${prefix}assets/css/site.css?v=3">
   <script type="application/ld+json">${schema || schemaFor("HomeAndConstructionBusiness", { url: canonical })}</script>
 </head>`;
 }
