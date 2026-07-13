@@ -1,0 +1,8 @@
+{"id":"image_001","type":"image","path":"assets/images/hero.jpg","source":"existing","description":"hero","width":333,"height":333,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_002","type":"image","path":"assets/images/logo-original.webp","source":"existing","description":"logo original","width":1000,"height":139,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_003","type":"image","path":"assets/images/logo.webp","source":"existing","description":"logo","width":845,"height":139,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_004","type":"image","path":"assets/images/project-fascia.jpg","source":"existing","description":"project fascia","width":414,"height":414,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_005","type":"image","path":"assets/images/project-roof-repair.jpg","source":"existing","description":"project roof repair","width":414,"height":414,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_006","type":"image","path":"assets/images/project-seamless.jpg","source":"existing","description":"project seamless","width":414,"height":414,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_007","type":"image","path":"assets/images/seamless-install.jpg","source":"existing","description":"seamless install","width":414,"height":414,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_008","type":"image","path":"assets/images/testimonial.jpg","source":"existing","description":"testimonial","width":414,"height":414,"provenance":{"provider":"local","adopted":true}}
