@@ -28,6 +28,6 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-Netlify publishes the repository root. There is no build command. Pushes to the GitHub `main` branch trigger a Netlify production build through the repository workflow.
+Netlify publishes the repository root. There is no build command. Pushes to the GitHub `main` branch trigger Netlify production deployment automatically.
 
 The quote form is detected and processed by Netlify Forms. Submissions redirect to `/thank-you/`.

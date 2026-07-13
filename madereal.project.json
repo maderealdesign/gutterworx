@@ -2,11 +2,11 @@
   "schema": "madereal.project.v1",
   "name": "gutterworx",
   "type": "live-site",
-  "status": "draft",
+  "status": "production",
   "client": "Gutterworx",
   "localPath": "/Users/dom/Library/CloudStorage/OneDrive-Personal/madereal/Madereal 2026/Websites/Gutterworx",
   "githubRepo": "https://github.com/maderealdesign/gutterworx",
-  "netlifySiteId": "",
+  "netlifySiteId": "8b9b4340-6aee-4977-8e41-d17481ae29cd",
   "netlifyProjectName": "gutterworx-yorkshire",
   "primaryUrl": "https://gutterworx-yorkshire.netlify.app",
   "customDomain": false,
@@ -15,5 +15,5 @@
     "present": false,
     "href": "https://madereal.uk"
   },
-  "notes": "Pure static HTML site. Custom domain and Search Console property still to be confirmed."
+  "notes": "Pure static HTML site deployed from GitHub. Custom domain and Search Console property still to be confirmed."
 }
