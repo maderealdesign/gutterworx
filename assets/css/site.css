@@ -133,7 +133,7 @@ p { margin: 0 0 1.15em; }
 .cta-flex h2 { max-width: 720px; font-size: clamp(2rem, 5vw, 3.4rem); }
 .site-footer { padding: 56px 0 94px; border-top: 1px solid var(--line); background: #020203; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
-.footer-brand img { width: 260px; }
+.footer-brand img { width: min(260px, 100%); height: auto; aspect-ratio: 845 / 139; object-fit: contain; object-position: left center; }
 .footer-brand p { max-width: 420px; margin-top: 20px; color: var(--silver); }
 .footer-title { margin-bottom: 16px; font-weight: 800; text-transform: uppercase; }
 .footer-links { display: grid; gap: 9px; }
@@ -165,9 +165,25 @@ p { margin: 0 0 1.15em; }
   .container, .narrow { width: min(calc(100% - 28px), var(--max)); }
   .hero { min-height: 680px; padding-top: 130px; }
   .hero::before { background: linear-gradient(0deg, rgba(5,5,5,.98), rgba(5,5,5,.64)); }
-  .trust-grid { grid-template-columns: 1fr 1fr; }
-  .trust-item:nth-child(2) { border-right: 0; }
-  .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .trust-strip { padding: 12px 0; background: #08080a; }
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+  .trust-item,
+  .trust-item:last-child,
+  .trust-item:nth-child(2),
+  .trust-item:nth-child(-n+2) {
+    min-height: 118px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 9px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: linear-gradient(145deg, #17171b, #0b0b0d);
+  }
+  .trust-item::before { content: "✓"; width: 25px; height: 25px; display: grid; place-items: center; margin-bottom: 9px; border-radius: 50%; background: rgba(209,11,18,.14); color: #ff555b; font-size: .8rem; font-weight: 900; }
+  .trust-item strong { font-size: 1.08rem; line-height: 1.08; }
+  .trust-item span { max-width: 145px; margin-top: 7px; font-size: .68rem; line-height: 1.4; }
   .split { grid-template-columns: 1fr; }
   .image-card { min-height: 410px; }
   .cards, .cards.four { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -181,6 +197,7 @@ p { margin: 0 0 1.15em; }
   .cta-flex { align-items: flex-start; flex-direction: column; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-brand { grid-column: auto; }
+  .footer-brand img { width: min(245px, 72vw); height: auto; aspect-ratio: 845 / 139; }
   .footer-bottom { flex-direction: column; }
 }
 @media (max-width: 430px) {
