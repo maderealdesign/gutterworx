@@ -86,13 +86,15 @@ function head({ route, title, description, type = "website", schema, noindex = f
   <meta property="og:image" content="${baseUrl}/assets/images/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="${prefix}assets/images/logo.webp" type="image/webp">
-  <link rel="stylesheet" href="${prefix}assets/css/site.css?v=3">
+  <link rel="stylesheet" href="${prefix}assets/css/site.css?v=4">
   <script type="application/ld+json">${schema || schemaFor("HomeAndConstructionBusiness", { url: canonical })}</script>
 </head>`;
 }
 
 function header(prefix, current = "") {
   const navItem = (key, href, label) => `<a href="${prefix}${href}"${current === key ? ' aria-current="page"' : ""}>${label}</a>`;
+  const serviceMenu = services.map(service => `<a href="${prefix}services/${service.slug}/">${esc(service.name)}</a>`).join("");
+  const areaMenu = locations.map(location => `<a href="${prefix}locations/${location.slug}/">${esc(location.name)}</a>`).join("");
   return `<body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
@@ -101,9 +103,15 @@ function header(prefix, current = "") {
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">☰</button>
     <nav class="nav" id="primary-nav" aria-label="Primary navigation">
       ${navItem("about", "about/", "About")}
-      ${navItem("services", "services/", "Services")}
+      <div class="nav-group">
+        ${navItem("services", "services/", "Services")}
+        <div class="nav-dropdown" role="group" aria-label="Service pages"><a href="${prefix}services/">All services</a>${serviceMenu}</div>
+      </div>
       ${navItem("gallery", "gallery/", "Our work")}
-      ${navItem("areas", "areas/", "Areas")}
+      <div class="nav-group">
+        ${navItem("areas", "areas/", "Areas")}
+        <div class="nav-dropdown nav-dropdown-areas" role="group" aria-label="Area pages"><a href="${prefix}areas/">All areas</a>${areaMenu}</div>
+      </div>
       ${navItem("contact", "contact/", "Contact")}
       <a class="btn btn-red btn-small" href="${prefix}contact/">Request a quote</a>
     </nav>
@@ -120,15 +128,19 @@ function floating() {
 }
 
 function footer(prefix) {
+  const serviceLinks = services.map(service => `<a href="${prefix}services/${service.slug}/">${esc(service.name)}</a>`).join("");
+  const areaLinks = locations.map(location => `<a href="${prefix}locations/${location.slug}/">${esc(location.name)}</a>`).join("");
   return `${floating()}
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><img src="${prefix}assets/images/logo.webp" alt="Gutterworx" width="845" height="139"><p>Seamless aluminium guttering, fascias, soffits, cut and drop trade supply and supporting roofing services across West Yorkshire and surrounding areas.</p></div>
-      <div><p class="footer-title">Explore</p><div class="footer-links"><a href="${prefix}about/">About</a><a href="${prefix}services/">Services</a><a href="${prefix}gallery/">Our work</a><a href="${prefix}areas/">Areas covered</a><a href="${prefix}contact/">Request a quote</a></div></div>
-      <div><p class="footer-title">Contact</p><div class="footer-links"><a href="tel:${phone}">${phoneDisplay}</a><a href="https://wa.me/${whatsapp}" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:${email}">${email}</a><a href="${facebook}" target="_blank" rel="noopener">Facebook</a><a href="${prefix}privacy/">Privacy</a></div></div>
+      <div><p class="footer-title">Company</p><div class="footer-links"><a href="${prefix}">Home</a><a href="${prefix}about/">About</a><a href="${prefix}gallery/">Our work</a><a href="${prefix}contact/">Request a quote</a><a href="${prefix}privacy/">Privacy</a></div></div>
+      <div><p class="footer-title">Services</p><div class="footer-links"><a href="${prefix}services/">All services</a>${serviceLinks}</div></div>
+      <div><p class="footer-title">Areas</p><div class="footer-links"><a href="${prefix}areas/">All areas</a>${areaLinks}</div></div>
+      <div><p class="footer-title">Contact</p><div class="footer-links"><a href="tel:${phone}">${phoneDisplay}</a><a href="https://wa.me/${whatsapp}" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:${email}">${email}</a><a href="${facebook}" target="_blank" rel="noopener">Facebook</a></div></div>
     </div>
-    <div class="footer-bottom"><span>© <span data-year>2026</span> Gutterworx. All rights reserved.</span><span>Serving West Yorkshire and surrounding areas.</span></div>
+    <div class="footer-bottom"><span>© <span data-year>2026</span> Gutterworx. All rights reserved.</span><span>Serving West Yorkshire and surrounding areas.</span><span class="madereal-credit">Website by <a href="https://madereal.uk" target="_blank" rel="noopener">madereal.uk</a></span></div>
   </div>
 </footer>
 <script src="${prefix}assets/js/site.js" defer></script>
