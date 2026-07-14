@@ -15,5 +15,5 @@
     "present": true,
     "href": "https://madereal.uk"
   },
-  "notes": "Pure static HTML site deployed from GitHub. The saved gutterworx homepage preview is the approved visual source of truth for every page. Custom domain and Search Console property still to be confirmed."
+  "notes": "Pure static HTML site deployed from GitHub. The saved gutterworx homepage preview is the approved visual source of truth for every page. Netlify form detection is enabled and quote submissions support three optional image uploads. Custom domain and Search Console property still to be confirmed."
 }

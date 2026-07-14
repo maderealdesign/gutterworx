@@ -37,6 +37,31 @@
       if (match) service.value = match.value;
     }
     updateCutDrop();
+
+    const photoInputs = Array.from(form.querySelectorAll("[data-project-photo]"));
+    const uploadError = form.querySelector("[data-upload-error]");
+    const maxUploadBytes = 7 * 1024 * 1024;
+    function validatePhotos() {
+      const files = photoInputs.flatMap(function (input) { return Array.from(input.files || []); });
+      const nonImages = files.filter(function (file) { return file.type && !file.type.startsWith("image/"); });
+      const totalBytes = files.reduce(function (total, file) { return total + file.size; }, 0);
+      let message = "";
+      if (nonImages.length) message = "Please choose image files only.";
+      else if (totalBytes > maxUploadBytes) message = "Those photos are over 7 MB combined. Please choose smaller images.";
+      photoInputs.forEach(function (input) { input.setCustomValidity(message); });
+      if (uploadError) {
+        uploadError.textContent = message;
+        uploadError.hidden = !message;
+      }
+      return !message;
+    }
+    photoInputs.forEach(function (input) { input.addEventListener("change", validatePhotos); });
+    form.addEventListener("submit", function (event) {
+      if (!validatePhotos()) {
+        event.preventDefault();
+        photoInputs.find(function (input) { return input.validationMessage; })?.focus();
+      }
+    });
   });
 
   document.querySelectorAll("[data-year]").forEach(function (el) {
