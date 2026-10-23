@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
-const baseUrl = "https://gutterworx-yorkshire.netlify.app";
+const baseUrl = "https://gutterworx.uk";
 const phoneDisplay = "07811 367556";
 const phone = "07811367556";
 const whatsapp = "447811367556";

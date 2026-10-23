@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you/
-Sitemap: https://gutterworx-yorkshire.netlify.app/sitemap.xml
+Sitemap: https://gutterworx.uk/sitemap.xml

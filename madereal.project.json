@@ -7,13 +7,13 @@
   "localPath": "/Users/dom/Library/CloudStorage/OneDrive-Personal/madereal/Madereal 2026/Websites/Gutterworx",
   "githubRepo": "https://github.com/maderealdesign/gutterworx",
   "netlifySiteId": "8b9b4340-6aee-4977-8e41-d17481ae29cd",
-  "netlifyProjectName": "gutterworx-yorkshire",
-  "primaryUrl": "https://gutterworx-yorkshire.netlify.app",
-  "customDomain": false,
+  "netlifyProjectName": "gutterworx",
+  "primaryUrl": "https://gutterworx.uk",
+  "customDomain": true,
   "footerBacklink": {
     "required": true,
     "present": true,
     "href": "https://madereal.uk"
   },
-  "notes": "Pure static HTML site deployed from GitHub. The saved gutterworx homepage preview is the approved visual source of truth for every page. Netlify form detection is enabled and quote submissions support three optional image uploads. Custom domain and Search Console property still to be confirmed."
+  "notes": "Pure static HTML site deployed from GitHub to https://gutterworx.uk. The saved gutterworx homepage preview is the approved visual source of truth for every page. Netlify form detection is enabled and quote submissions support three optional image uploads. Search Console onboarding authorised for maderealdesign@gmail.com on 23 October 2026."
 }
